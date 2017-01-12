@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Symbols xmlns="http://schemas.postsharp.org/2.0/symbols">
+  <Class Class="#1=T:Aim.Data.ActiveRecordTransactionAttribute">
+    <Instance Declaration="#2=M:Aim.ExtJs.Test.TreeGrid.PrjWBSExt::DoPaste()" Token="1b">
+      <Target>
+        <JoinPoint Advising="#1" Description="#3=Wrapped by advice(s) OnEntry, OnSuccess, OnException, OnExit" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#4=M:Aim.ExtJs.Test.TreeGrid.PrjWBSExt::DoSetExecuteStatus()" Token="1a">
+      <Target>
+        <JoinPoint Advising="#1" Description="#3" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#5=M:Aim.ExtJs.Test.TreeGrid.PrjWBSExt::DoSetSeverity()" Token="19">
+      <Target>
+        <JoinPoint Advising="#1" Description="#3" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#6=M:Aim.ExtJs.Test.TreeGrid.PrjWBSV2::DoPaste()" Token="12">
+      <Target>
+        <JoinPoint Advising="#1" Description="#3" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#7=M:Aim.ExtJs.Test.TreeGrid.PrjWBSV2::DoSetExecuteStatus()" Token="11">
+      <Target>
+        <JoinPoint Advising="#1" Description="#3" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#8=M:Aim.ExtJs.Test.TreeGrid.PrjWBSV2::DoSetSeverity()" Token="10">
+      <Target>
+        <JoinPoint Advising="#1" Description="#3" />
+      </Target>
+    </Instance>
+  </Class>
+</Symbols>

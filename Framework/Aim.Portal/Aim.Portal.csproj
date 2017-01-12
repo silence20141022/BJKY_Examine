@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A19B8322-D5A3-42F7-A6AF-0C1B3B4DA7BD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aim.Portal</RootNamespace>
+    <AssemblyName>Aim.Portal</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aim.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Aim.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.ActiveRecord, Version=2.1.2.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Aim.Resources\libs\Castle.ActiveRecord.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Aim.Resources\libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Aim.Resources\libs\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="PostSharp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition, Version=2010.2.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Aim.Resources\libs\System.ComponentModel.Composition.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\Entity\Customed\AddressList.cs" />
+    <Compile Include="Model\Entity\Customed\DynamicAuth.cs" />
+    <Compile Include="Model\Entity\Customed\DynamicAuthCatalog.cs" />
+    <Compile Include="Model\Entity\Customed\DynamicOperation.cs" />
+    <Compile Include="Model\Entity\Customed\DynamicPermission.cs" />
+    <Compile Include="Model\Entity\Customed\DynamicPermissionCatalog.cs" />
+    <Compile Include="Model\Entity\Customed\FileFolder.cs" />
+    <Compile Include="Model\Entity\Customed\FileItem.cs" />
+    <Compile Include="Model\Entity\Customed\SysApplication.cs" />
+    <Compile Include="Model\Entity\Customed\SysAuth.cs" />
+    <Compile Include="Model\Entity\Customed\SysAuthType.cs" />
+    <Compile Include="Model\Entity\Customed\SysDataExportTemplate.cs" />
+    <Compile Include="Model\Entity\Customed\SysDataImportTemplate.cs" />
+    <Compile Include="Model\Entity\Customed\SysEnumeration.cs" />
+    <Compile Include="Model\Entity\Customed\SysEvent.cs" />
+    <Compile Include="Model\Entity\Customed\SysGraph.cs" />
+    <Compile Include="Model\Entity\Customed\SysGroup.cs" />
+    <Compile Include="Model\Entity\Customed\SysGroupType.cs" />
+    <Compile Include="Model\Entity\Customed\SysMessage.cs" />
+    <Compile Include="Model\Entity\Customed\SysModule.cs" />
+    <Compile Include="Model\Entity\Customed\SysParameter.cs" />
+    <Compile Include="Model\Entity\Customed\SysParameterCatalog.cs" />
+    <Compile Include="Model\Entity\Customed\SysReportEntry.cs" />
+    <Compile Include="Model\Entity\Customed\SysRole.cs" />
+    <Compile Include="Model\Entity\Customed\SysRoleType.cs" />
+    <Compile Include="Model\Entity\Customed\SysSystem.cs" />
+    <Compile Include="Model\Entity\Customed\SysTableStructure.cs" />
+    <Compile Include="Model\Entity\Customed\SysUser.cs" />
+    <Compile Include="Model\Entity\Generated\AddressList.cs" />
+    <Compile Include="Model\Entity\Generated\DynamicAuth.cs" />
+    <Compile Include="Model\Entity\Generated\DynamicAuthCatalog.cs" />
+    <Compile Include="Model\Entity\Generated\DynamicOperation.cs" />
+    <Compile Include="Model\Entity\Generated\DynamicPermission.cs" />
+    <Compile Include="Model\Entity\Generated\DynamicPermissionCatalog.cs" />
+    <Compile Include="Model\Entity\Generated\FileFolder.cs" />
+    <Compile Include="Model\Entity\Generated\FileItem.cs" />
+    <Compile Include="Model\Entity\Generated\FileModule.cs" />
+    <Compile Include="Model\Entity\Generated\News.cs" />
+    <Compile Include="Model\Entity\Generated\NewsBrowseHis.cs" />
+    <Compile Include="Model\Entity\Generated\NewsType.cs" />
+    <Compile Include="Model\Entity\Generated\SysApplication.cs" />
+    <Compile Include="Model\Entity\Generated\SysAuth.cs" />
+    <Compile Include="Model\Entity\Generated\SysAuthType.cs" />
+    <Compile Include="Model\Entity\Generated\SysDataExportTemplate.cs" />
+    <Compile Include="Model\Entity\Generated\SysDataImportTemplate.cs" />
+    <Compile Include="Model\Entity\Generated\SysEnumeration.cs" />
+    <Compile Include="Model\Entity\Generated\SysEvent.cs" />
+    <Compile Include="Model\Entity\Generated\SysEventType.cs" />
+    <Compile Include="Model\Entity\Generated\SysGraph.cs" />
+    <Compile Include="Model\Entity\Generated\SysGroup.cs" />
+    <Compile Include="Model\Entity\Generated\SysGroupType.cs" />
+    <Compile Include="Model\Entity\Generated\SysMessage.cs" />
+    <Compile Include="Model\Entity\Generated\SysModule.cs" />
+    <Compile Include="Model\Entity\Generated\SysModuleType.cs" />
+    <Compile Include="Model\Entity\Generated\SysParameter.cs" />
+    <Compile Include="Model\Entity\Generated\SysParameterCatalog.cs" />
+    <Compile Include="Model\Entity\Generated\SysReportEntry.cs" />
+    <Compile Include="Model\Entity\Generated\SysRole.cs" />
+    <Compile Include="Model\Entity\Generated\SysRoleType.cs" />
+    <Compile Include="Model\Entity\Generated\SysSystem.cs" />
+    <Compile Include="Model\Entity\Generated\SysTableStructure.cs" />
+    <Compile Include="Model\Entity\Generated\SysUser.cs" />
+    <Compile Include="Model\Entity\Generated\WebPart.cs" />
+    <Compile Include="Model\Entity\Generated\WebPartBaseTemplate.cs" />
+    <Compile Include="Model\Entity\Generated\WebPartTemplate.cs" />
+    <Compile Include="Model\ModelBase.cs" />
+    <Compile Include="Model\Rule\Customed\DynamicPermissionRule.cs" />
+    <Compile Include="Model\Rule\Customed\FileFolderRule.cs" />
+    <Compile Include="Model\Rule\Customed\SysApplicationRule.cs" />
+    <Compile Include="Model\Rule\Customed\SysAuthRule.cs" />
+    <Compile Include="Model\Rule\Customed\SysAuthTypeRule.cs" />
+    <Compile Include="Model\Rule\Customed\SysGroupRule.cs" />
+    <Compile Include="Model\Rule\Customed\SysGroupTypeRule.cs" />
+    <Compile Include="Model\Rule\Customed\SysMessageRule.cs" />
+    <Compile Include="Model\Rule\Customed\SysModuleRule.cs" />
+    <Compile Include="Model\Rule\Customed\SysModuleTypeRule.cs" />
+    <Compile Include="Model\Rule\Customed\SysRoleRule.cs" />
+    <Compile Include="Model\Rule\Customed\SysRoleTypeRule.cs" />
+    <Compile Include="Model\Rule\Customed\SysSystemRule.cs" />
+    <Compile Include="Model\Rule\Customed\SysTableStructureRule.cs" />
+    <Compile Include="Model\Rule\Customed\SysUserRule.cs" />
+    <Compile Include="Model\Rule\Customed\WebPartExt.cs" />
+    <Compile Include="Model\Rule\Customed\WebPartRule.cs" />
+    <Compile Include="Model\Rule\Generated\AddressListRule.cs" />
+    <Compile Include="Model\Rule\Generated\DynamicAuthCatalogRule.cs" />
+    <Compile Include="Model\Rule\Generated\DynamicAuthRule.cs" />
+    <Compile Include="Model\Rule\Generated\DynamicOperationRule.cs" />
+    <Compile Include="Model\Rule\Generated\DynamicPermissionCatalogRule.cs" />
+    <Compile Include="Model\Rule\Generated\DynamicPermissionRule.cs" />
+    <Compile Include="Model\Rule\Generated\FileFolderRule.cs" />
+    <Compile Include="Model\Rule\Generated\FileItemRule.cs" />
+    <Compile Include="Model\Rule\Generated\FileModuleRule.cs" />
+    <Compile Include="Model\Rule\Generated\NewsRule.cs" />
+    <Compile Include="Model\Rule\Generated\NewsTypeRule.cs" />
+    <Compile Include="Model\Rule\Generated\SysApplicationRule.cs" />
+    <Compile Include="Model\Rule\Generated\SysAuthRule.cs" />
+    <Compile Include="Model\Rule\Generated\SysAuthTypeRule.cs" />
+    <Compile Include="Model\Rule\Generated\SysDataExportTemplateRule.cs" />
+    <Compile Include="Model\Rule\Generated\SysDataImportTemplateRule.cs" />
+    <Compile Include="Model\Rule\Generated\SysEnumerationRule.cs" />
+    <Compile Include="Model\Rule\Generated\SysEventRule.cs" />
+    <Compile Include="Model\Rule\Generated\SysEventTypeRule.cs" />
+    <Compile Include="Model\Rule\Generated\SysGraphRule.cs" />
+    <Compile Include="Model\Rule\Generated\SysGroupRule.cs" />
+    <Compile Include="Model\Rule\Generated\SysGroupTypeRule.cs" />
+    <Compile Include="Model\Rule\Generated\SysMessageRule.cs" />
+    <Compile Include="Model\Rule\Generated\SysModuleRule.cs" />
+    <Compile Include="Model\Rule\Generated\SysModuleTypeRule.cs" />
+    <Compile Include="Model\Rule\Generated\SysParameterCatalogRule.cs" />
+    <Compile Include="Model\Rule\Generated\SysParameterRule.cs" />
+    <Compile Include="Model\Rule\Generated\SysReportEntryRule.cs" />
+    <Compile Include="Model\Rule\Generated\SysRoleRule.cs" />
+    <Compile Include="Model\Rule\Generated\SysRoleTypeRule.cs" />
+    <Compile Include="Model\Rule\Generated\SysSystemRule.cs" />
+    <Compile Include="Model\Rule\Generated\SysTableStructureRule.cs" />
+    <Compile Include="Model\Rule\Generated\SysUserRule.cs" />
+    <Compile Include="Model\Rule\Generated\WebPartBaseTemplateRule.cs" />
+    <Compile Include="Model\Rule\Generated\WebPartRule.cs" />
+    <Compile Include="Model\Rule\Generated\WebPartTemplateRule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Data\DataImportService.cs" />
+    <Compile Include="Services\Data\Enums\TemplateFileType.cs" />
+    <Compile Include="Services\Data\ImportTemplateNodeConfigProcessor.cs" />
+    <Compile Include="Services\Data\ImportTemplateParser.cs" />
+    <Compile Include="Services\Data\ImportTemplateStructure.cs" />
+    <Compile Include="Services\Data\Objects\CellPosition.cs" />
+    <Compile Include="Services\Data\Objects\TemplateConfigProcessor.cs" />
+    <Compile Include="Services\Data\Objects\TemplateNode.cs" />
+    <Compile Include="Services\Data\Objects\TemplateNodeAttribute.cs" />
+    <Compile Include="Services\FileSystem\FileService.cs" />
+    <Compile Include="Services\IPortalServiceProvider.cs" />
+    <Compile Include="Services\Log\LogContent.cs" />
+    <Compile Include="Services\Log\LogService.cs" />
+    <Compile Include="Services\SystemInfo.cs" />
+    <Compile Include="Web\ContextModule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Web\DataRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Web\PortalService.cs" />
+    <Compile Include="Web\UI\BaseListPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\UI\BaseMasterPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\UI\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\UI\PageStateContainer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Web\WebMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Web\WebPortalService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Aim.Component\Aim.Component.csproj">
+      <Project>{4E5A1740-332D-41F9-A333-9CA6D5E989FF}</Project>
+      <Name>Aim.Component</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

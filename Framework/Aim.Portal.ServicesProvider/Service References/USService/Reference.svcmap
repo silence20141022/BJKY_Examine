@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="01a5d836-acc2-4c53-9c8c-dce3ad8a4826" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8007/UserSessionService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="UserSessionService.disco" MetadataType="Disco" ID="2f0b6bc0-703d-4c9f-a819-18a69c82e05c" SourceId="1" SourceUrl="http://ray-pc2:8007/UserSessionService.svc?disco" />
+    <MetadataFile FileName="UserSessionService.xsd" MetadataType="Schema" ID="5f67cfe5-7595-4d46-89f0-cd9edd30f459" SourceId="1" SourceUrl="http://ray-pc2:8007/UserSessionService.svc?xsd=xsd0" />
+    <MetadataFile FileName="UserSessionService.wsdl" MetadataType="Wsdl" ID="f5bd3bc5-0bd5-40cd-a736-7ac2287400e0" SourceId="1" SourceUrl="http://ray-pc2:8007/UserSessionService.svc?wsdl" />
+    <MetadataFile FileName="UserSessionService1.xsd" MetadataType="Schema" ID="57c18b95-75a2-4b0c-a90d-e20cae32e8b3" SourceId="1" SourceUrl="http://ray-pc2:8007/UserSessionService.svc?xsd=xsd2" />
+    <MetadataFile FileName="UserSessionService2.xsd" MetadataType="Schema" ID="31af9028-66a7-476c-bb65-a01ac08f326a" SourceId="1" SourceUrl="http://ray-pc2:8007/UserSessionService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

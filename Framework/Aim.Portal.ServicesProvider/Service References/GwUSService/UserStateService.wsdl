@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CreateUserState">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userInfo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mac" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateUserStateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateUserStateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateUserStateEx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userInfo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mac" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loginMethod" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateUserStateExResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateUserStateExResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateUserStateByWorkNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mac" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateUserStateByWorkNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateUserStateByWorkNoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckUserState">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="passCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckUserStateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckUserStateResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogoutUserState">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="passCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogoutUserStateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LogoutUserStateResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogoutUserStateEx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="passCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="logoutMethod" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogoutUserStateExResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LogoutUserStateExResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetPreOut">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="passCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetPreOutResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetPreOutEx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="passCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="logoutMethod" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetPreOutExResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RefreshUserState">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="passCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RefreshUserStateResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="passCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="passCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newUserInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateUserInfoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="passCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="passCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newUserData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateUserDataResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserProp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="passCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserPropResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserPropResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserProp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="passCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newUserProp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserPropResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateUserPropResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserDataNode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="passCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserDataNodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserDataNodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetUserDataNode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="passCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newDataNode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetUserDataNodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetUserDataNodeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateUserStateSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateUserState" />
+  </wsdl:message>
+  <wsdl:message name="CreateUserStateSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateUserStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateUserStateExSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateUserStateEx" />
+  </wsdl:message>
+  <wsdl:message name="CreateUserStateExSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateUserStateExResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateUserStateByWorkNoSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateUserStateByWorkNo" />
+  </wsdl:message>
+  <wsdl:message name="CreateUserStateByWorkNoSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateUserStateByWorkNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserStateSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckUserState" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserStateSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckUserStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogoutUserStateSoapIn">
+    <wsdl:part name="parameters" element="tns:LogoutUserState" />
+  </wsdl:message>
+  <wsdl:message name="LogoutUserStateSoapOut">
+    <wsdl:part name="parameters" element="tns:LogoutUserStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogoutUserStateExSoapIn">
+    <wsdl:part name="parameters" element="tns:LogoutUserStateEx" />
+  </wsdl:message>
+  <wsdl:message name="LogoutUserStateExSoapOut">
+    <wsdl:part name="parameters" element="tns:LogoutUserStateExResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetPreOutSoapIn">
+    <wsdl:part name="parameters" element="tns:SetPreOut" />
+  </wsdl:message>
+  <wsdl:message name="SetPreOutSoapOut">
+    <wsdl:part name="parameters" element="tns:SetPreOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetPreOutExSoapIn">
+    <wsdl:part name="parameters" element="tns:SetPreOutEx" />
+  </wsdl:message>
+  <wsdl:message name="SetPreOutExSoapOut">
+    <wsdl:part name="parameters" element="tns:SetPreOutExResponse" />
+  </wsdl:message>
+  <wsdl:message name="RefreshUserStateSoapIn">
+    <wsdl:part name="parameters" element="tns:RefreshUserState" />
+  </wsdl:message>
+  <wsdl:message name="RefreshUserStateSoapOut">
+    <wsdl:part name="parameters" element="tns:RefreshUserStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserData" />
+  </wsdl:message>
+  <wsdl:message name="GetUserDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserDataSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUserData" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserDataSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUserDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserPropSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserProp" />
+  </wsdl:message>
+  <wsdl:message name="GetUserPropSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserPropResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserPropSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUserProp" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserPropSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUserPropResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserDataNodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserDataNode" />
+  </wsdl:message>
+  <wsdl:message name="GetUserDataNodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserDataNodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetUserDataNodeSoapIn">
+    <wsdl:part name="parameters" element="tns:SetUserDataNode" />
+  </wsdl:message>
+  <wsdl:message name="SetUserDataNodeSoapOut">
+    <wsdl:part name="parameters" element="tns:SetUserDataNodeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UserStateServiceSoap">
+    <wsdl:operation name="CreateUserState">
+      <wsdl:input message="tns:CreateUserStateSoapIn" />
+      <wsdl:output message="tns:CreateUserStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateUserStateEx">
+      <wsdl:input message="tns:CreateUserStateExSoapIn" />
+      <wsdl:output message="tns:CreateUserStateExSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateUserStateByWorkNo">
+      <wsdl:input message="tns:CreateUserStateByWorkNoSoapIn" />
+      <wsdl:output message="tns:CreateUserStateByWorkNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserState">
+      <wsdl:input message="tns:CheckUserStateSoapIn" />
+      <wsdl:output message="tns:CheckUserStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogoutUserState">
+      <wsdl:input message="tns:LogoutUserStateSoapIn" />
+      <wsdl:output message="tns:LogoutUserStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogoutUserStateEx">
+      <wsdl:input message="tns:LogoutUserStateExSoapIn" />
+      <wsdl:output message="tns:LogoutUserStateExSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPreOut">
+      <wsdl:input message="tns:SetPreOutSoapIn" />
+      <wsdl:output message="tns:SetPreOutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPreOutEx">
+      <wsdl:input message="tns:SetPreOutExSoapIn" />
+      <wsdl:output message="tns:SetPreOutExSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RefreshUserState">
+      <wsdl:input message="tns:RefreshUserStateSoapIn" />
+      <wsdl:output message="tns:RefreshUserStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <wsdl:input message="tns:GetUserInfoSoapIn" />
+      <wsdl:output message="tns:GetUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfo">
+      <wsdl:input message="tns:UpdateUserInfoSoapIn" />
+      <wsdl:output message="tns:UpdateUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserData">
+      <wsdl:input message="tns:GetUserDataSoapIn" />
+      <wsdl:output message="tns:GetUserDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserData">
+      <wsdl:input message="tns:UpdateUserDataSoapIn" />
+      <wsdl:output message="tns:UpdateUserDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProp">
+      <wsdl:input message="tns:GetUserPropSoapIn" />
+      <wsdl:output message="tns:GetUserPropSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserProp">
+      <wsdl:input message="tns:UpdateUserPropSoapIn" />
+      <wsdl:output message="tns:UpdateUserPropSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDataNode">
+      <wsdl:input message="tns:GetUserDataNodeSoapIn" />
+      <wsdl:output message="tns:GetUserDataNodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetUserDataNode">
+      <wsdl:input message="tns:SetUserDataNodeSoapIn" />
+      <wsdl:output message="tns:SetUserDataNodeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UserStateServiceSoap" type="tns:UserStateServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateUserState">
+      <soap:operation soapAction="http://tempuri.org/CreateUserState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUserStateEx">
+      <soap:operation soapAction="http://tempuri.org/CreateUserStateEx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUserStateByWorkNo">
+      <soap:operation soapAction="http://tempuri.org/CreateUserStateByWorkNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserState">
+      <soap:operation soapAction="http://tempuri.org/CheckUserState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogoutUserState">
+      <soap:operation soapAction="http://tempuri.org/LogoutUserState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogoutUserStateEx">
+      <soap:operation soapAction="http://tempuri.org/LogoutUserStateEx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPreOut">
+      <soap:operation soapAction="http://tempuri.org/SetPreOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPreOutEx">
+      <soap:operation soapAction="http://tempuri.org/SetPreOutEx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshUserState">
+      <soap:operation soapAction="http://tempuri.org/RefreshUserState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <soap:operation soapAction="http://tempuri.org/GetUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfo">
+      <soap:operation soapAction="http://tempuri.org/UpdateUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserData">
+      <soap:operation soapAction="http://tempuri.org/GetUserData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserData">
+      <soap:operation soapAction="http://tempuri.org/UpdateUserData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProp">
+      <soap:operation soapAction="http://tempuri.org/GetUserProp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserProp">
+      <soap:operation soapAction="http://tempuri.org/UpdateUserProp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDataNode">
+      <soap:operation soapAction="http://tempuri.org/GetUserDataNode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUserDataNode">
+      <soap:operation soapAction="http://tempuri.org/SetUserDataNode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UserStateServiceSoap12" type="tns:UserStateServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateUserState">
+      <soap12:operation soapAction="http://tempuri.org/CreateUserState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUserStateEx">
+      <soap12:operation soapAction="http://tempuri.org/CreateUserStateEx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUserStateByWorkNo">
+      <soap12:operation soapAction="http://tempuri.org/CreateUserStateByWorkNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserState">
+      <soap12:operation soapAction="http://tempuri.org/CheckUserState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogoutUserState">
+      <soap12:operation soapAction="http://tempuri.org/LogoutUserState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogoutUserStateEx">
+      <soap12:operation soapAction="http://tempuri.org/LogoutUserStateEx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPreOut">
+      <soap12:operation soapAction="http://tempuri.org/SetPreOut" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPreOutEx">
+      <soap12:operation soapAction="http://tempuri.org/SetPreOutEx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshUserState">
+      <soap12:operation soapAction="http://tempuri.org/RefreshUserState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetUserInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfo">
+      <soap12:operation soapAction="http://tempuri.org/UpdateUserInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserData">
+      <soap12:operation soapAction="http://tempuri.org/GetUserData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserData">
+      <soap12:operation soapAction="http://tempuri.org/UpdateUserData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProp">
+      <soap12:operation soapAction="http://tempuri.org/GetUserProp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserProp">
+      <soap12:operation soapAction="http://tempuri.org/UpdateUserProp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDataNode">
+      <soap12:operation soapAction="http://tempuri.org/GetUserDataNode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUserDataNode">
+      <soap12:operation soapAction="http://tempuri.org/SetUserDataNode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserStateService">
+    <wsdl:port name="UserStateServiceSoap" binding="tns:UserStateServiceSoap">
+      <soap:address location="http://localhost:8018/webservice/UserStateService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UserStateServiceSoap12" binding="tns:UserStateServiceSoap12">
+      <soap12:address location="http://localhost:8018/webservice/UserStateService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4F569840-B877-404A-BD1A-B3C2D966F042}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aim.Examining.Model</RootNamespace>
+    <AssemblyName>Aim.Examining.Model</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aim.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Aim.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.ActiveRecord, Version=2.1.2.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Framework\Aim.Resources\libs\Castle.ActiveRecord.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Framework\Aim.Resources\libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Framework\Aim.Resources\libs\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="PostSharp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Customed\CustomFirstIndicatorScore.cs" />
+    <Compile Include="Customed\CustomIndicator.cs" />
+    <Compile Include="Customed\CustomIndicatorOpinion.cs" />
+    <Compile Include="Customed\DeptExamineRelation.cs" />
+    <Compile Include="Customed\ExamineAppeal.cs" />
+    <Compile Include="Customed\ExamineIndicator.cs" />
+    <Compile Include="Customed\ExamineRelation.cs" />
+    <Compile Include="Customed\ExamineStage.cs" />
+    <Compile Include="Customed\ExamineStageDeptDetail.cs" />
+    <Compile Include="Customed\ExamineStageDetail.cs" />
+    <Compile Include="Customed\ExamineStageResult.cs" />
+    <Compile Include="Customed\ExamineTask.cs" />
+    <Compile Include="Customed\ExamYearResult.cs" />
+    <Compile Include="Customed\Feedback.cs" />
+    <Compile Include="Customed\IndicatorFirst.cs" />
+    <Compile Include="Customed\IndicatorScore.cs" />
+    <Compile Include="Customed\IndicatorSecond.cs" />
+    <Compile Include="Customed\MessageTemplate.cs" />
+    <Compile Include="Customed\PersonConfig.cs" />
+    <Compile Include="Customed\PersonFirstIndicator.cs" />
+    <Compile Include="Customed\PersonSecondIndicator.cs" />
+    <Compile Include="Customed\ScoreStandard.cs" />
+    <Compile Include="Customed\SysConfig.cs" />
+    <Compile Include="Customed\TempTask.cs" />
+    <Compile Include="Customed\UserBalance.cs" />
+    <Compile Include="ExamModelBase.cs" />
+    <Compile Include="Generated\CustomFirstIndicatorScore.g.cs" />
+    <Compile Include="Generated\CustomIndicator.g.cs" />
+    <Compile Include="Generated\CustomIndicatorOpinion.g.cs" />
+    <Compile Include="Generated\DeptExamineRelation.g.cs" />
+    <Compile Include="Generated\ExamineAppeal.g.cs" />
+    <Compile Include="Generated\ExamineIndicator.g.cs" />
+    <Compile Include="Generated\ExamineRelation.g.cs" />
+    <Compile Include="Generated\ExamineStage.g.cs" />
+    <Compile Include="Generated\ExamineStageDeptDetail.g.cs" />
+    <Compile Include="Generated\ExamineStageDetail.g.cs" />
+    <Compile Include="Generated\ExamineStageResult.g.cs" />
+    <Compile Include="Generated\ExamineTask.g.cs" />
+    <Compile Include="Generated\ExamYearResult.g.cs" />
+    <Compile Include="Generated\Feedback.g.cs" />
+    <Compile Include="Generated\IndicatorFirst.g.cs" />
+    <Compile Include="Generated\IndicatorScore.g.cs" />
+    <Compile Include="Generated\IndicatorSecond.g.cs" />
+    <Compile Include="Generated\MessageTemplate.g.cs" />
+    <Compile Include="Generated\PersonConfig.g.cs" />
+    <Compile Include="Generated\PersonFirstIndicator.g.cs" />
+    <Compile Include="Generated\PersonSecondIndicator.g.cs" />
+    <Compile Include="Generated\ScoreStandard.g.cs" />
+    <Compile Include="Generated\SysConfig.g.cs" />
+    <Compile Include="Generated\TempTask.g.cs" />
+    <Compile Include="Generated\UserBalance.g.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Framework\Aim.Portal\Aim.Portal.csproj">
+      <Project>{A19B8322-D5A3-42F7-A6AF-0C1B3B4DA7BD}</Project>
+      <Name>Aim.Portal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
