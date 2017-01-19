@@ -26,9 +26,10 @@
 			    { name: 'Id' }, { name: 'StageName' }, { name: 'StartTime' }, { name: 'EndTime' }, { name: 'State' }, { name: 'CreateId' },
 			    { name: 'CreateName' }, { name: 'CreateTime' }, { name: 'Remark' }, { name: 'LaunchUserId' }, { name: 'LaunchUserName' },
 			    { name: 'TaskQuan' }, { name: 'LaunchDeptId' }, { name: 'LaunchDeptName' }, { name: 'ExamineType' }, { name: 'SubmitQuan' },
-			    { name: 'Year' }, { name: 'StageType'}],
-                listeners: { aimbeforeload: function (proxy, options) {
-                }
+			    { name: 'Year' }, { name: 'StageType' }],
+                listeners: {
+                    aimbeforeload: function (proxy, options) {
+                    }
                 }
             });
 
@@ -42,22 +43,22 @@
                 columns: 4,
                 collapsed: false,
                 items: [
-                { fieldLabel: '考核阶段名称', labelWidth: 90, id: 'StageName', schopts: { qryopts: "{ mode: 'Like', field: 'StageName' }"} },
-                { fieldLabel: '发起人', id: 'LaunchUserName', schopts: { qryopts: "{ mode: 'Like', field: 'LaunchUserName' }"} },
-                { fieldLabel: '开始时间', id: 'StartTime', xtype: 'datefield', vtype: 'daterange', endDateField: 'EndTime', schopts: { qryopts: "{ mode: 'GreaterThan', datatype:'Date', field: 'StartTime' }"} },
-                { fieldLabel: '结束时间', id: 'EndTime', xtype: 'datefield', vtype: 'daterange', startDateField: 'StartTime', schopts: { qryopts: "{ mode: 'LessThanEqual', datatype:'Date', field: 'EndTime' }"} }
+                { fieldLabel: '考核阶段名称', labelWidth: 90, id: 'StageName', schopts: { qryopts: "{ mode: 'Like', field: 'StageName' }" } },
+                { fieldLabel: '发起人', id: 'LaunchUserName', schopts: { qryopts: "{ mode: 'Like', field: 'LaunchUserName' }" } },
+                { fieldLabel: '开始时间', id: 'StartTime', xtype: 'datefield', vtype: 'daterange', endDateField: 'EndTime', schopts: { qryopts: "{ mode: 'GreaterThan', datatype:'Date', field: 'StartTime' }" } },
+                { fieldLabel: '结束时间', id: 'EndTime', xtype: 'datefield', vtype: 'daterange', startDateField: 'StartTime', schopts: { qryopts: "{ mode: 'LessThanEqual', datatype:'Date', field: 'EndTime' }" } }
                 ]
             });
             // 工具栏
             tlBar = new Ext.ux.AimToolbar({
-                items: [ 
+                items: [
                 {
-                text: '添加考核',
-                iconCls: 'aim-icon-add',
-                handler: function () { 
-                    window.location.href = "../DeptConfig/DeptExamineWizzard.aspx?op=c";
-                }
-            },
+                    text: '添加考核',
+                    iconCls: 'aim-icon-add',
+                    handler: function () {
+                        window.location.href = "../DeptConfig/DeptExamineWizzard.aspx?op=c";
+                    }
+                },
                 '-', {
                     text: '删除',
                     iconCls: 'aim-icon-delete',
@@ -222,101 +223,101 @@
                      }
                  },
                  '->']
-        });
+            });
 
-        // 工具标题栏
-        titPanel = new Ext.ux.AimPanel({
-            tbar: tlBar,
-            items: [schBar]
-        });
-        var columnsarray = [
-                    new Ext.ux.grid.AimRowNumberer(),
-                    new Ext.ux.grid.AimCheckboxSelectionModel(),
-                    { id: 'StageName', dataIndex: 'StageName', header: '考核阶段名称', width: 180, renderer: RowRender, sortable: true },
-					{ id: 'LaunchUserName', dataIndex: 'LaunchUserName', header: '发起人', width: 60, sortable: true },
-					{ id: 'LaunchDeptName', dataIndex: 'LaunchDeptName', header: '发起人部门', width: 100, sortable: true },
-					{ id: 'ExamineType', dataIndex: 'ExamineType', header: '考核类型', width: 80, sortable: true },
-					{ id: 'Year', dataIndex: 'Year', header: '年份', width: 70, sortable: true },
-					{ id: 'StageType', dataIndex: 'StageType', header: '阶段类型', width: 70, enumdata: StageEnum },
-					{ id: 'StartTime', dataIndex: 'StartTime', header: '开始时间', width: 70, renderer: ExtGridDateOnlyRender, sortable: true },
-					{ id: 'EndTime', dataIndex: 'EndTime', header: '结束时间', width: 70, renderer: ExtGridDateOnlyRender, sortable: true },
-					{ id: 'State', dataIndex: 'State', header: '状态', width: 80, enumdata: EnumData, sortable: true },
-					{ id: 'TaskQuan', dataIndex: 'TaskQuan', header: '任务数', width: 60, sortable: true },
-                    { id: 'SubmitQuan', dataIndex: 'SubmitQuan', header: '提交数', width: 60 },
-                    { id: 'Id', dataIndex: 'Id', header: '操作', sortable: true, width: 120, renderer: RowRender }
-                    ];
-        // 表格面板
-        grid = new Ext.ux.grid.AimGridPanel({
-            store: store,
-            columnLines: true,
-            region: 'center',
-            //   viewConfig: { forceFit: true },
-            autoExpandColumn: 'StageName',
-            gridLine: true,
-            columns: columnsarray,
-            bbar: pgBar,
-            cls: 'grid-row-span',
-            tbar: titPanel
-        });
-        // 页面视图 
-        viewport = new Ext.ux.AimViewport({
-            items: [grid]
-        });
-    }
-    // 提交数据成功后
-    function onExecuted() {
-        store.reload();
-    }
-    function opencenterwin(url, name, iWidth, iHeight) {
-        var iTop = (window.screen.availHeight - 30 - iHeight) / 2; //获得窗口的垂直位置;
-        var iLeft = (window.screen.availWidth - 10 - iWidth) / 2; //获得窗口的水平位置;ExamineResultView
-        window.open(url, name, 'height=' + iHeight + ',,innerHeight=' + iHeight + ',width=' + iWidth + ',innerWidth=' + iWidth + ',top=' + iTop + ',left=' + iLeft + ',toolbar=no,menubar=no,scrollbars=yes,resizable=yes');
-    }
-    function ShowTask(val, val2) {
-        var task = new Ext.util.DelayedTask();
-        task.delay(100, function () {
-            opencenterwin("TaskGroupByToUser.aspx?ExamineStageId=" + val + "&ExamineStageName=" + escape(val2), "", 1000, 600);
-        });
-    }
-    function ShowResult(val, val2, val3) {
-        if (val2 == "4") {
-            var task = new Ext.util.DelayedTask();
-            task.delay(100, function () {
-                opencenterwin("../ExamineTaskManage/YearResult.aspx?ExamineStageId=" + val + "&ExamineStageName=" + escape(val3), "", 1200, 600);
+            // 工具标题栏
+            titPanel = new Ext.ux.AimPanel({
+                tbar: tlBar,
+                items: [schBar]
+            });
+            var columnsarray = [
+                        new Ext.ux.grid.AimRowNumberer(),
+                        new Ext.ux.grid.AimCheckboxSelectionModel(),
+                        { id: 'StageName', dataIndex: 'StageName', header: '考核阶段名称', width: 180, renderer: RowRender, sortable: true },
+                        { id: 'LaunchUserName', dataIndex: 'LaunchUserName', header: '发起人', width: 60, sortable: true },
+                        { id: 'LaunchDeptName', dataIndex: 'LaunchDeptName', header: '发起人部门', width: 100, sortable: true },
+                        { id: 'ExamineType', dataIndex: 'ExamineType', header: '考核类型', width: 80, sortable: true },
+                        { id: 'Year', dataIndex: 'Year', header: '年份', width: 70, sortable: true },
+                        { id: 'StageType', dataIndex: 'StageType', header: '阶段类型', width: 70, enumdata: StageEnum },
+                        { id: 'StartTime', dataIndex: 'StartTime', header: '开始时间', width: 70, renderer: ExtGridDateOnlyRender, sortable: true },
+                        { id: 'EndTime', dataIndex: 'EndTime', header: '结束时间', width: 70, renderer: ExtGridDateOnlyRender, sortable: true },
+                        { id: 'State', dataIndex: 'State', header: '状态', width: 80, enumdata: EnumData, sortable: true },
+                        { id: 'TaskQuan', dataIndex: 'TaskQuan', header: '任务数', width: 60, sortable: true },
+                        { id: 'SubmitQuan', dataIndex: 'SubmitQuan', header: '提交数', width: 60 },
+                        { id: 'Id', dataIndex: 'Id', header: '操作', sortable: true, width: 120, renderer: RowRender }
+            ];
+            // 表格面板
+            grid = new Ext.ux.grid.AimGridPanel({
+                store: store,
+                columnLines: true,
+                region: 'center',
+                //   viewConfig: { forceFit: true },
+                autoExpandColumn: 'StageName',
+                gridLine: true,
+                columns: columnsarray,
+                bbar: pgBar,
+                cls: 'grid-row-span',
+                tbar: titPanel
+            });
+            // 页面视图 
+            viewport = new Ext.ux.AimViewport({
+                items: [grid]
             });
         }
-        else {
+        // 提交数据成功后
+        function onExecuted() {
+            store.reload();
+        }
+        function opencenterwin(url, name, iWidth, iHeight) {
+            var iTop = (window.screen.availHeight - 30 - iHeight) / 2; //获得窗口的垂直位置;
+            var iLeft = (window.screen.availWidth - 10 - iWidth) / 2; //获得窗口的水平位置;ExamineResultView
+            window.open(url, name, 'height=' + iHeight + ',,innerHeight=' + iHeight + ',width=' + iWidth + ',innerWidth=' + iWidth + ',top=' + iTop + ',left=' + iLeft + ',toolbar=no,menubar=no,scrollbars=yes,resizable=yes');
+        }
+        function ShowTask(val, val2) {
             var task = new Ext.util.DelayedTask();
             task.delay(100, function () {
-                opencenterwin("../ExamineTaskManage/QuarterResult.aspx?ExamineStageId=" + val + "&ExamineStageName=" + escape(val3), "", 1200, 600);
+                opencenterwin("TaskGroupByToUser.aspx?ExamineStageId=" + val + "&ExamineStageName=" + escape(val2), "", 1000, 600);
             });
         }
-    }
-    function ShowExamineStage(val, val2) {
-        var task = new Ext.util.DelayedTask();
-        task.delay(100, function () { 
-            window.location.href = "../DeptConfig/DeptExamineWizzard.aspx?op=u&id=" + val; 
-        });
-    }
-    function RowRender(value, cellmeta, record, rowIndex, columnIndex, store) {
-        var rtn = "";
-        switch (this.id) {
-            case "StageName":
-                if (value) {
-                    rtn = "<label style='color:Blue; cursor:pointer; text-decoration:underline;' onclick='ShowExamineStage(\"" + record.get("Id") + "\",\"" + record.get("ExamineType") + "\")'>" + value + "</label>";
-                }
-                break;
-            case "Id":
-                if (parseInt(record.get("State")) > 0) {
-                    rtn += "<label style='color:Blue; cursor:pointer; text-decoration:underline;' onclick='ShowTask(\"" + value + "\",\"" + record.get("StageName") + "\")'>考核任务</label>  ";
-                }
-                if (parseInt(record.get("State")) >= 3) {
-                    rtn += "<label style='color:Blue; cursor:pointer; text-decoration:underline;' onclick='ShowResult(\"" + value + "\",\"" + record.get("StageType") + "\",\"" + record.get("StageName") + "\")'>考核结果</label>";
-                }
-                break;
+        function ShowResult(val, val2, val3, val4) {
+            if (val2 == "4" && val4 == "部门级考核") {
+                var task = new Ext.util.DelayedTask();
+                task.delay(100, function () {
+                    opencenterwin("../ExamineTaskManage/YearResult.aspx?ExamineStageId=" + val + "&ExamineStageName=" + escape(val3), "", 1200, 600);
+                });
+            }
+            else {
+                var task = new Ext.util.DelayedTask();
+                task.delay(100, function () {
+                    opencenterwin("../ExamineTaskManage/QuarterResult.aspx?ExamineStageId=" + val + "&ExamineStageName=" + escape(val3), "", 1200, 600);
+                });
+            }
         }
-        return rtn;
-    }
+        function ShowExamineStage(val, val2) {
+            var task = new Ext.util.DelayedTask();
+            task.delay(100, function () {
+                window.location.href = "../DeptConfig/DeptExamineWizzard.aspx?op=u&id=" + val;
+            });
+        }
+        function RowRender(value, cellmeta, record, rowIndex, columnIndex, store) {
+            var rtn = "";
+            switch (this.id) {
+                case "StageName":
+                    if (value) {
+                        rtn = "<label style='color:Blue; cursor:pointer; text-decoration:underline;' onclick='ShowExamineStage(\"" + record.get("Id") + "\",\"" + record.get("ExamineType") + "\")'>" + value + "</label>";
+                    }
+                    break;
+                case "Id":
+                    if (parseInt(record.get("State")) > 0) {
+                        rtn += "<label style='color:Blue; cursor:pointer; text-decoration:underline;' onclick='ShowTask(\"" + value + "\",\"" + record.get("StageName") + "\")'>考核任务</label>  ";
+                    }
+                    if (parseInt(record.get("State")) >= 3) {//ExamineType
+                        rtn += "<label style='color:Blue; cursor:pointer; text-decoration:underline;' onclick='ShowResult(\"" + value + "\",\"" + record.get("StageType") + "\",\"" + record.get("StageName") + "\",\"" + record.get("ExamineType") + "\")'>考核结果</label>";
+                    }
+                    break;
+            }
+            return rtn;
+        }
     </script>
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="BodyHolder" runat="server">
