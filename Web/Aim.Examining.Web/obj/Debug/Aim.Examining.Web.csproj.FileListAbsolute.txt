@@ -267,3 +267,4 @@ D:\北京矿研\BJKY_Examine\Web\Aim.Examining.Web\obj\Debug\Aim.Examining.Web.p
 D:\北京矿研\BJKY_Examine\Web\Aim.Examining.Web\bin\Aim.Portal.Services.dll
 D:\北京矿研\BJKY_Examine\Web\Aim.Examining.Web\bin\Aim.Portal.Services.pdb
 D:\北京矿研\BJKY_Examine\Web\Aim.Examining.Web\obj\Debug\Aim.Examining.Web.csprojResolveAssemblyReference.cache
+D:\北京矿研\BJKY_Examine\Web\Aim.Examining.Web\bin\Aim.Examining.Web.dll.config

@@ -264,241 +264,6 @@ namespace Aim.Examining.Web.ExamineConfig
                 }
             }
         }
-        //private void ConfirmPara(string beUserIds, string beUserNames, string beDeptIds, string beDeptNames, ExamineStageDetail esdEnt, ExamineRelation erEnt)
-        //{
-        //    string toRoleCodes = erEnt.UpLevelCode + "," + erEnt.SameLevelCode + "," + erEnt.DownLevelCode;  //考核关系知道后  找到所有考核对象
-        //    string toRoleNames = erEnt.UpLevelName + "," + erEnt.SameLevelName + "," + erEnt.DownLevelName;
-        //    if (!string.IsNullOrEmpty(toRoleCodes))
-        //    {
-        //        string[] toRoleCodeArray = toRoleCodes.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-        //        string[] toRoleNameArray = toRoleNames.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-        //        for (int f = 0; f < toRoleCodeArray.Length; f++)
-        //        {
-        //            CreateInstituteTask(beUserIds, beUserNames, beDeptIds, beDeptNames, esdEnt, toRoleCodeArray[f], toRoleNameArray[f]);
-        //        }
-        //    }
-        //}
-        //        private void CreateInstituteTask(string beUserIds, string beUserNames, string beDeptIds, string beDeptNames, ExamineStageDetail esdEnt, string toRoleCode, string toRoleName)
-        //        {
-        //            string toUserIds = "";
-        //            string toUserNames = "";
-        //            string toDeptIds = "";
-        //            string toDeptNames = "";
-        //            string sql = "";
-        //            string[] array = null;
-        //            DataTable dt = new DataTable();
-        //            IList<PersonConfig> pcEnts = null;
-        //            switch (toRoleCode)//对所有的考核对象进行判断 确定参与考核打分的人员
-        //            {
-        //                case "DirectorSecretary"://院长书记
-        //                case "DeputyDirector"://副院长
-        //                case "EnterpriseDirector"://如果上级里面有控股企业董事长和监事长
-        //                case "EnterpriseDeputyDirector":
-        //                    pcEnts = PersonConfig.FindAllByProperty(PersonConfig.Prop_GroupCode, toRoleCode);
-        //                    if (pcEnts.Count > 0)
-        //                    {
-        //                        if (!string.IsNullOrEmpty(pcEnts[0].ClerkIds))
-        //                        {
-        //                            toUserIds = pcEnts[0].ClerkIds;
-        //                            toUserNames = pcEnts[0].ClerkNames;
-        //                            toDeptIds = pcEnts[0].ClerkGroupIds;
-        //                            toDeptNames = pcEnts[0].ClerkGroupNames;
-        //                        }
-        //                    }
-        //                    break;
-        //                case "ExcutiveDeptLeader"://职能服务部门正职               
-        //                    sql = @"select FirstLeaderIds as UserIds,FirstLeaderNames as UserNames,FirstLeaderGroupIds as DeptIds,FirstLeaderGroupNames as DeptNames
-        //                    from BJKY_Examine..PersonConfig where GroupType='职能服务部门' and Id in 
-        //                    (select GroupID from BJKY_Examine..ExamineStageDeptDetail where ExamineStageId='" + esEnt.Id + "')";
-        //                    array = GetUserIdAndName(DataHelper.QueryDictList(sql));
-        //                    toUserIds = array[0]; toUserNames = array[1];
-        //                    toDeptIds = array[2]; toDeptNames = array[3];
-        //                    break;
-        //                case "BusinessDeptLeader"://经营目标单位正职
-        //                    sql = @"select FirstLeaderIds as UserIds, FirstLeaderNames as UserNames,FirstLeaderGroupIds as DeptIds,FirstLeaderGroupNames as DeptNames
-        //                    from BJKY_Examine..PersonConfig where GroupType='经营目标单位' and Id in 
-        //                    (select GroupID from BJKY_Examine..ExamineStageDeptDetail where ExamineStageId='" + esEnt.Id + "')";
-        //                    array = GetUserIdAndName(DataHelper.QueryDictList(sql));
-        //                    toUserIds = array[0]; toUserNames = array[1];
-        //                    toDeptIds = array[2]; toDeptNames = array[3];
-        //                    break;
-        //                case "ExcutiveDeptClerkDelegate"://职能部门员工代表
-        //                    sql = @"select InstituteClerkDelegateIds as UserIds,InstituteClerkDelegateNames as UserNames,InstituteClerkDelegateGroupIds as DeptIds,InstituteClerkDelegateGroupNames as DeptNames
-        //                    from BJKY_Examine..PersonConfig
-        //                    where GroupType='职能服务部门' and Id in  (select GroupID from BJKY_Examine..ExamineStageDeptDetail where ExamineStageId='" + esEnt.Id + "')";
-        //                    array = GetUserIdAndName(DataHelper.QueryDictList(sql));
-        //                    toUserIds = array[0]; toUserNames = array[1];
-        //                    toDeptIds = array[2]; toDeptNames = array[3];
-        //                    break;
-        //                case "BusinessDeptClerkDelegate"://经营单位员工代表
-        //                    sql = @"select  InstituteClerkDelegateIds as UserIds, InstituteClerkDelegateNames as UserNames,InstituteClerkDelegateGroupIds as DeptIds,InstituteClerkDelegateGroupNames as DeptNames
-        //                    from BJKY_Examine..PersonConfig
-        //                    where GroupType='经营目标单位' and Id in (select GroupID from BJKY_Examine..ExamineStageDeptDetail where ExamineStageId='" + esEnt.Id + "')";
-        //                    array = GetUserIdAndName(DataHelper.QueryDictList(sql));
-        //                    toUserIds = array[0]; toUserNames = array[1];
-        //                    toDeptIds = array[2]; toDeptNames = array[3];
-        //                    break;
-
-        //            }
-        //            string[] beUserIdArray = new string[] { }; string[] beUserNameArray = new string[] { };
-        //            string[] beDeptIdArray = new string[] { }; string[] beDeptNameArray = new string[] { };
-        //            string[] toUserIdArray = new string[] { }; string[] toUserNameArray = new string[] { };
-        //            string[] toDeptIdArray = new string[] { }; string[] toDeptNameArray = new string[] { };
-        //            if (!string.IsNullOrEmpty(beUserIds))
-        //            {
-        //                beUserIdArray = beUserIds.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-        //            }
-        //            if (!string.IsNullOrEmpty(beUserNames))
-        //            {
-        //                beUserNameArray = beUserNames.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-        //            }
-        //            if (!string.IsNullOrEmpty(beDeptIds))
-        //            {
-        //                beDeptIdArray = beDeptIds.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-        //            }
-        //            if (!string.IsNullOrEmpty(beDeptNames))
-        //            {
-        //                beDeptNameArray = beDeptNames.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-        //            }
-        //            if (!string.IsNullOrEmpty(toUserIds))
-        //            {
-        //                toUserIdArray = toUserIds.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-        //            }
-        //            if (!string.IsNullOrEmpty(toUserNames))
-        //            {
-        //                toUserNameArray = toUserNames.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-        //            }
-        //            if (!string.IsNullOrEmpty(toDeptIds))
-        //            {
-        //                toDeptIdArray = toDeptIds.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-        //            }
-        //            if (!string.IsNullOrEmpty(toDeptNames))
-        //            {
-        //                toDeptNameArray = toDeptNames.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-        //            }
-        //            #region
-        //            for (int i = 0; i < beUserIdArray.Length; i++)
-        //            {
-        //                for (int j = 0; j < toUserIdArray.Length; j++)
-        //                {
-        //                    if (beUserIdArray[i] != toUserIdArray[j])//防止一个人身兼两职。自己对自己不能打分
-        //                    {
-        //                        ExamineTask etEnt = new ExamineTask();
-        //                        etEnt.ExamineStageId = esEnt.Id;
-        //                        etEnt.BeRoleCode = esdEnt.BeRoleCode;
-        //                        etEnt.BeRoleName = esdEnt.BeRoleName;
-        //                        etEnt.BeUserId = beUserIdArray[i];
-        //                        etEnt.BeUserName = beUserNameArray[i];
-        //                        if (i <= beDeptIdArray.Length - 1)
-        //                        {
-        //                            etEnt.BeDeptId = beDeptIdArray[i];
-        //                        }
-        //                        if (i <= beDeptNameArray.Length - 1)
-        //                        {
-        //                            etEnt.BeDeptName = beDeptNameArray[i];
-        //                        }
-        //                        etEnt.ToRoleCode = toRoleCode;
-        //                        etEnt.ToRoleName = toRoleName;
-        //                        etEnt.ToUserId = toUserIdArray[j];
-        //                        etEnt.ToUserName = toUserNameArray[j];
-        //                        etEnt.ToDeptId = toDeptIdArray[j];
-        //                        etEnt.ToDeptName = toDeptNameArray[j];
-        //                        etEnt.ExamineRelationId = esdEnt.ExamineRelationId;
-        //                        etEnt.ExamineIndicatorId = esdEnt.ExamineIndicatorId;
-        //                        etEnt.State = "0";
-        //                        etEnt.DoCreate();
-        //                    }
-        //                }
-        //            }
-        //            #endregion
-        //        }
-
-        //        private void CreateSpecialTask(string beUserIds, string beUserNames, string beDeptIds, string beDeptNames, ExamineStageDetail esdEnt) //特例  如果被考对象经营目标单位正职  还需要推送一部分任务到 人力资源部 工作业绩打分人
-        //        {
-        //            if (esdEnt.BeRoleCode == "BeBusinessDeptLeader")
-        //            {
-        //                IList<PersonConfig> pcEnts = PersonConfig.FindAllByProperty(PersonConfig.Prop_GroupCode, "HRAchievementWritor");
-        //                IList<IndicatorFirst> ifEnts = IndicatorFirst.FindAllByProperty(IndicatorFirst.Prop_InsteadColumn, "T");//配置考核项中。 确实有人力资源打分项
-        //                if (pcEnts.Count > 0 && ifEnts.Count > 0)
-        //                {
-        //                    if (!string.IsNullOrEmpty(pcEnts[0].ClerkIds))
-        //                    {
-        //                        string[] beUserIdArray = new string[] { };
-        //                        if (!string.IsNullOrEmpty(beUserIds))
-        //                        {
-        //                            beUserIdArray = beUserIds.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-        //                        }
-        //                        string[] beUserNameArray = new string[] { };
-        //                        if (!string.IsNullOrEmpty(beUserNames))
-        //                        {
-        //                            beUserNameArray = beUserNames.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-        //                        }
-        //                        string[] beDeptIdArray = new string[] { };
-        //                        if (!string.IsNullOrEmpty(beDeptIds))
-        //                        {
-        //                            beDeptIdArray = beDeptIds.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-        //                        }
-        //                        string[] beDeptNameArray = new string[] { };
-        //                        if (!string.IsNullOrEmpty(beDeptNames))
-        //                        {
-        //                            beDeptNameArray = beDeptNames.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-        //                        }
-        //                        string[] toUserIdArray = new string[] { };
-        //                        if (!string.IsNullOrEmpty(pcEnts[0].ClerkIds))
-        //                        {
-        //                            toUserIdArray = pcEnts[0].ClerkIds.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-        //                        }
-        //                        string[] toUserNameArray = new string[] { };
-        //                        if (!string.IsNullOrEmpty(pcEnts[0].ClerkNames))
-        //                        {
-        //                            toUserNameArray = pcEnts[0].ClerkNames.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-        //                        }
-        //                        for (int i = 0; i < beUserIdArray.Length; i++)
-        //                        {
-        //                            for (int j = 0; j < toUserIdArray.Length; j++)
-        //                            {
-        //                                if (beUserIdArray[i] != toUserIdArray[j])//防止一个人身兼两职。自己对自己不能打分
-        //                                {
-        //                                    ExamineTask etEnt = new ExamineTask();
-        //                                    etEnt.ExamineStageId = esEnt.Id;
-        //                                    etEnt.BeRoleCode = esdEnt.BeRoleCode;
-        //                                    etEnt.BeRoleName = esdEnt.BeRoleName;
-        //                                    etEnt.BeUserId = beUserIdArray[i];
-        //                                    etEnt.BeUserName = beUserNameArray[i];
-        //                                    if (i <= beDeptIdArray.Length - 1)
-        //                                    {
-        //                                        etEnt.BeDeptId = beDeptIdArray[i];
-        //                                    }
-        //                                    if (i <= beDeptNameArray.Length - 1)
-        //                                    {
-        //                                        etEnt.BeDeptName = beDeptNameArray[i];
-        //                                    }
-        //                                    etEnt.ToRoleCode = "HRAchievementWritor";
-        //                                    etEnt.ToRoleName = ifEnts[0].IndicatorFirstName + "填报人";
-        //                                    etEnt.ToUserId = toUserIdArray[j];
-        //                                    etEnt.ToUserName = toUserNameArray[j];
-        //                                    sql = @" select  Id,GroupName from BJKY_Examine..PersonConfig
-        //                                    where (ClerkIds like '%{0}%' or SecondLeaderIds like '%{0}%' or FirstLeaderIds like '%{0}%') and 
-        //                                    (GroupType='职能服务部门' or GroupType='经营目标单位')";
-        //                                    sql = string.Format(sql, toUserIdArray[j]);
-        //                                    IList<EasyDictionary> dics3 = DataHelper.QueryDictList(sql);
-        //                                    if (dics3.Count > 0)
-        //                                    {
-        //                                        etEnt.ToDeptId = dics3[0].Get<string>("Id");
-        //                                        etEnt.ToDeptName = dics3[0].Get<string>("GroupName");
-        //                                    }
-        //                                    etEnt.ExamineRelationId = esdEnt.ExamineRelationId;
-        //                                    etEnt.ExamineIndicatorId = esdEnt.ExamineIndicatorId;
-        //                                    etEnt.State = "0";
-        //                                    etEnt.Tag = "1";
-        //                                    etEnt.DoCreate();
-        //                                }
-        //                            }
-        //                        }
-        //                    }
-        //                }
-        //            }
-        //        }
         private string[] GetUserIdAndName(IList<EasyDictionary> dics)
         {
             string Ids = ""; string Names = "";
@@ -558,7 +323,7 @@ namespace Aim.Examining.Web.ExamineConfig
                 }
                 esEnt.State = 2;
                 esEnt.DoUpdate();
-                PageState.Add("Result", "T"); 
+                PageState.Add("Result", "T");
             }
             else//院级考核
             {
@@ -570,7 +335,7 @@ namespace Aim.Examining.Web.ExamineConfig
                 }
                 esEnt.State = 2;
                 esEnt.DoUpdate();
-                PageState.Add("Result", "T"); 
+                PageState.Add("Result", "T");
             }
         }
         private void CancelLaunch()//撤销启动
@@ -633,8 +398,9 @@ namespace Aim.Examining.Web.ExamineConfig
                     esrEnt.ExamineStageId = esEnt.Id;
                     esrEnt.UserId = beUserIdArray[i];
                     esrEnt.UserName = beUserNameArray[i];
-                    esrEnt.DeptId = esEnt.LaunchDeptId;
-                    esrEnt.DeptName = esEnt.LaunchDeptName;
+                    string[] bedept = Utility.GetDeptInfo(beUserIdArray[i]);
+                    esrEnt.DeptId = bedept[0];
+                    esrEnt.DeptName = bedept[1];
                     esrEnt.StageType = esEnt.StageType;
                     esrEnt.Year = esEnt.Year;
                     //分别计算上级  同级  下级评分  
@@ -770,11 +536,11 @@ namespace Aim.Examining.Web.ExamineConfig
             {
                 ExamYearResult eyrEnt = new ExamYearResult();
                 eyrEnt.ExamineStageId = esEnt.Id;
-                if (esEnt.ExamineType == "院级考核")
-                {
-                    eyrEnt.BeRoleCode = esrEnts[i].BeRoleCode;
-                    eyrEnt.BeRoleName = esrEnts[i].BeRoleName;
-                }
+                //if (esEnt.ExamineType == "院级考核")
+                //{
+                //    eyrEnt.BeRoleCode = esrEnts[i].BeRoleCode;
+                //    eyrEnt.BeRoleName = esrEnts[i].BeRoleName;
+                //}
                 eyrEnt.UserId = esrEnts[i].UserId;
                 eyrEnt.UserName = esrEnts[i].UserName;
                 eyrEnt.DeptId = esrEnts[i].DeptId;
